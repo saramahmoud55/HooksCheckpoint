@@ -1,9 +1,9 @@
 import React from "react";
-import "./styles.css"
-
-export default function MovieCard({ movie }) {
+import "./styles.css";
+export default function MovieCard({ movie, onClick }) {
   return (
-    <div className="card movie_card">
+
+    <div className="card movie_card" onClick={onClick}>
       {movie && (
         <>
           <img src={movie.posterURL} alt="imageframe" className="card-img-top" />
@@ -14,8 +14,11 @@ export default function MovieCard({ movie }) {
               <i className="fas fa-star"></i> {movie.rate} / 10
             </span>
           </div>
+         
         </>
       )}
     </div>
+
+
   )
 }
